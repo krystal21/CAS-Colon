@@ -1,0 +1,32 @@
+model:
+  model: sup
+  # backbone: resnet50
+  # backbone: densenet121
+  backbone: inception
+  dataset: RJ
+  exp: exp
+  save_dir: test/0
+  num_classes: 10
+training:
+  batch_size: 64
+  epochs: 50
+  num_workers: 8
+  seed: 26
+  gpu_id: '0'
+  save_freq: 500
+optimizer:
+  name: Adam
+  lr: 1.0e-4
+  momentum: 0.9
+  weight_decay: 5.0e-4
+scheduler:
+  name: CosineAnnealingLR
+  T_max: 50
+  eta_min: 1.0e-6
+
+path:
+  RJ:
+    csv_path: data/RJ/fold
+    img_path: /home/zhangzhengjie/data/zhangzhengjie/data/coloseg/RJ/image/
+    
+   
